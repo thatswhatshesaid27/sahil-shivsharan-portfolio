@@ -5,11 +5,11 @@ const Navbar = () => {
 
   const logo =
     theme === "dark"
-      ? "./assets/Noble frame_white_png.png"   // dark mode logo5 
+      ? "./assets/Noble frame_black_png.png"   // dark mode logo5 
       : "./assets/Noble frame_black_png.png";  // light mode logo
 
   return (
-    <nav className="fixed top-0 w-full  px-5 lg:px-10  py-0 lg:py-0 flex justify-between items-center">
+    <nav className="fixed top-0 w-full  px-5 lg:px-10  py-0 lg:py-4 flex justify-between items-center">
   
 
       <div>
@@ -22,8 +22,9 @@ const Navbar = () => {
     
 
       <button
+        
         onClick={toggleTheme}
-        className="px-4 py-1 border-none rounded"
+        className="px-4 py-2 px-2 border-none rounded text-2xl hover:scale-110 transition-transform duration-300"
       >
         {theme === "dark" ? "🌞" : "🌙"}
       </button>

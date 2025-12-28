@@ -1,7 +1,14 @@
 const Hero = () => {
   return (
-    <section className="h-screen flex items-center justify-center">
-      <h1 className="text-5xl font-bold">Hero Section</h1>
+    <section className="h-screen flex items-center justify-center overflow-hidden">
+      <video
+        src="/assets/Hero_section_animation.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover"
+      />
     </section>
   );
 };
