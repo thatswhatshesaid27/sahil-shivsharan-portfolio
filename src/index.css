@@ -1,0 +1,13 @@
+/* LIGHT THEME */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card-bg: rgba(37, 200, 229, 0.09);
+}
+
+/* DARK THEME */
+.dark {
+  --bg: #000000;
+  --text: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.08);
+}
