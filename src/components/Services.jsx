@@ -1,52 +1,54 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   {
+    title: "Brand Designing",
+    image: "/assets/brand-designing.jpg",
+    slug: "brand-designing",
+  },
+  {
+    title: "Logo Animation",
+    image: "/assets/logo-animation.jpg",
+    slug: "logo-animation",
+  },
+  {
     title: "Motion Graphics",
-    image: "/assets/motion-graphics.jpg",
-  },
-  {
-    title: "Video Editing",
-    image: "/assets/video-editing.jpg",
-  },
-  {
-    title: "Logo Animation",
-    image: "/assets/brand-animation.png",
-  },
-  {
-    title: "Logo Animation",
-    image: "/assets/logo-animation.png",
+    image: "/assets/motion_graphics.jpg",
+    slug: "motion-graphics",
   },
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-32 px-10">
-      <h2 className="text-4xl mb-10 text-center font-bold">
+      <h2 className="text-4xl mb-16 text-center font-bold">
         Services
       </h2>
 
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="flex flex-wrap justify-center gap-12">
         {services.map((service, i) => (
           <motion.div
             key={i}
+            onClick={() => navigate(`/service/${service.slug}`)}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.2 }}
             whileHover={{ scale: 1.05 }}
-            className="relative h-64 rounded-xl overflow-hidden cursor-pointer"
+            viewport={{ once: true }}
+            className="h-100 w-100 rounded-xl overflow-hidden cursor-pointer shadow-lg"
           >
-            {/* IMAGE */}
             <img
               src={service.image}
               alt={service.title}
               loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover"
+              className=" w-full h-full"
             />
 
-            {/* OVERLAY */}
             <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <h3 className="text-xl font-semibold text-white">
+              <h3 className="text-xl font-semibold text-white text-center px-4">
                 {service.title}
               </h3>
             </div>
